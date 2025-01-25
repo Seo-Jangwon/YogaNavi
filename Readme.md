@@ -1,9 +1,12 @@
 # 🧘‍♀️ YogaNavi
-<img src="./logo-1.png" alt="Logo" width="500" height="400"/>
+<img src="./logo.png" alt="Logo" width="500" height="400"/>
 
 - 배포 URL: [여기를 클릭!](https://drive.google.com/file/d/195UohXwyjYp07eXYUQKVgrAC9LLTJkKY/view)
-- Test ID: 1@example.com
-- Test PW: 1
+- Test 강사 ID: teacher@example.com
+- Test 강사 PW: 1
+
+- Test 수강생 ID: student@example.com
+- Test 수강생 PW: 1
 
 <br>
 
