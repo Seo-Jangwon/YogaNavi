@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 application.properties
 application-test.properties
+TestJpaConfig.java
 **/src/main/resources/firebase-service-account.json
 .env
 

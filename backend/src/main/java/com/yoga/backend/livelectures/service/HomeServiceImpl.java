@@ -65,8 +65,7 @@ public class HomeServiceImpl implements HomeService {
             return Collections.emptyList();
         }
         int end = Math.min((start + size), sortedResult.size());
-        log.info("사용자 ID: {}, 페이지: {}, 크기: {} - 데이터 부분 집합 반환: {} ~ {}", userId, page, size, start,
-            end);
+
         return sortedResult.subList(start, end);
     }
 
