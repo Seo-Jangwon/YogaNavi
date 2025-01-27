@@ -7,6 +7,7 @@ import com.yoga.backend.livelectures.dto.HomeResponseDto;
 import com.yoga.backend.livelectures.repository.LiveLectureRepository;
 import com.yoga.backend.livelectures.repository.MyLiveLectureRepository;
 import com.yoga.backend.members.repository.UsersRepository;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
@@ -101,7 +102,7 @@ public class HomeServiceImpl implements HomeService {
     @Transactional(readOnly = true)
     protected List<HomeResponseDto> getUserLectures(int userId, ZonedDateTime nowKorea) {
         log.debug("강사 강의 조회 시작: 사용자 ID {}", userId);
-        LocalDate currentDate = nowKorea.toLocalDate();
+        Instant currentDate = nowKorea.toInstant();
         List<LiveLectures> lectures = liveLectureRepository.findLecturesByUserAndDateRange(userId,
             currentDate);
         Users user = usersRepository.findById(userId)

@@ -56,13 +56,15 @@ public interface LiveLectureRepository extends JpaRepository<LiveLectures, Long>
 
 
     //home을 위한 쿼리
-    @Query("SELECT l FROM LiveLectures l WHERE l.user.id = :userId " +
-        "AND (DATE(l.startDate) <= DATE(:currentDate) " +
-        "     AND DATE(l.endDate) >= DATE(:currentDate) " +
-        "     OR DATE(l.endDate) > DATE(:currentDate)) ")
+    @Query("SELECT DISTINCT l FROM LiveLectures l " +
+        "JOIN FETCH l.user " +
+        "WHERE l.user.id = :userId " +
+        "AND (l.startDate <= :currentDate " +
+        "     AND l.endDate >= :currentDate " +
+        "     OR l.endDate > :currentDate) ")
     List<LiveLectures> findLecturesByUserAndDateRange(
         @Param("userId") int userId,
-        @Param("currentDate") LocalDate currentDate
+        @Param("currentDate") Instant currentDate
     );
 
     // history를 위한 쿼리
